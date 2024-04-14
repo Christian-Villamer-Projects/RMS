@@ -1,0 +1,2 @@
+npx sequelize-cli init 
+npx sequelize-auto -o "./models" -d rmsdb -h localhost -u root -p 3306 -x -e mysql
