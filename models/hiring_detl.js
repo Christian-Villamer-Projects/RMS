@@ -55,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    status_employ: {
+    status_employee: {
       type: DataTypes.INTEGER,
       allowNull: false
     }

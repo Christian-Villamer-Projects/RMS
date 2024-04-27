@@ -36,11 +36,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    company: {
+    company_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    branch: {
+    branch_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },

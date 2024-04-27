@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    branch: {
+    branch_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -66,7 +66,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: false
     }
-  }, {
+  }, 
+  {
     sequelize,
     tableName: 'users',
     timestamps: false,

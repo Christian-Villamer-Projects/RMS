@@ -5,11 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'employee',
-        key: 'company'
-      }
+      primaryKey: true
     },
     logo: {
       type: DataTypes.BLOB,
