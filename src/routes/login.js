@@ -4,19 +4,14 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { users } = require("../../models");
+const loginController = require("../controller/loginController")
 // const auth = require("../middleware/auth");
 
 
-router.get("/", async(req, res) => {
-    try {
-        res.render("login", {
-            success: req.flash('success'),
-            errors: req.flash('errors'),
-        })
-    } catch (error) {
-        console.log(error);
-    }
-})
+router.get("/", loginController.LoginGet);
+
+
+
 
 
 module.exports = router;
