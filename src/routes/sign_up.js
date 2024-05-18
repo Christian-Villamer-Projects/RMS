@@ -8,8 +8,8 @@ const signUpController = require("../controller/signupController")
 // const auth = require("../middleware/auth");
 
 
-router.get("/", loginController.LoginGet);
-router.post("/", loginController.LoginPost);
+router.get("/", signUpController.signUpView);
+router.post("/", signUpController.CreateUser);
 
 
 

@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     image: {
       type: DataTypes.BLOB,
-      allowNull: false
+      allowNull: true
     },
     birthdate: {
       type: DataTypes.DATEONLY,
