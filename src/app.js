@@ -31,6 +31,7 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, "view"));
 
+
 app.use(express.static(path.join(__dirname, "public")));
 
 
@@ -41,9 +42,13 @@ const login_router = require("./routes/login");
 const sign_up_router = require("./routes/sign_up");
 
 
+
 app.use("/", index_router);
 app.use("/login", login_router);
-app.use("/sign_up", sign_up_router)
+app.use("/sign_up", sign_up_router);
+
+const admin_router = require("./routes/admin/admin");
+app.use("/admin", admin_router);
 
 app.listen(port, () => {
     console.log(`server running on port ${port}`);

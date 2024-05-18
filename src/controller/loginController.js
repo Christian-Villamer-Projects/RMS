@@ -17,13 +17,16 @@ const LoginPost = async (req, res) => {
         const { username, password } = req.body
         const User = await users.findOne({ where: { username: username }});
         const passwordMatches = bcrypt.compareSync(password, User.password);
-        res.json(User);
-        // c
-        // res.status(200).json({ passValid : passwordMatches })
-
-        // res.json(req.body)
+        if(passwordMatches){
+            req.flash('success', `Login Successful`)
+            res.redirect("/admin/")
+        }else{
+            req.flash('error', `Login Failed`)
+            res.redirect("/login")
+        }
     } catch (error) {
-        console.log(error);
+        req.flash('errors', `Login Failed`)
+        res.redirect("/login")
     }
 }
 
