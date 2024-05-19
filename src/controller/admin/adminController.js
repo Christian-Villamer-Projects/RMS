@@ -15,7 +15,22 @@ const dashboard = async (req, res) => {
 }
 
 
+const usersGet = async (req, res) => {
+    try {
+
+        res.render("admin/user", {
+            success: req.flash('success'),
+            errors: req.flash('errors'),
+        })
+        
+    } catch (error) {
+        
+    }
+}
+
+
 
 module.exports = {
     dashboard,
+    usersGet
 };

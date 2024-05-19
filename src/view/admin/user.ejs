@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/admin/chart/apexcharts.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="/css/admin/users.css" rel="stylesheet">   
+    
+
+
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    
+    <div class="container">
+        <!---Sidebar--->
+        <%- include('./sidenav'); -%>
+        <!---End sidebar--->
+
+        <!---Main--->
+        <main>
+
+            <!---Right Section--->
+            <div class="right-section">
+                <!--Nav-->
+                <%- include('./profile_nav'); -%>
+                <!--End Nav-->
+            </div>
+            <!---End Right Section--->
+
+            <h1>Employee List</h1>
+            <!---Reservation Table--->
+            <div class="employee-users">
+                <h2>Employee Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Branch</th>
+                            <th>Actions</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>264</td>
+                            <td>Sample Name</td>
+                            <td>Admin</td>
+                            <td>Obando</td>
+                            <td>
+                                <a href="./edit_profile/">
+                                    <button style="font-size:20px;"><i class="fa fa-pencil-square-o"></i></button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#">
+                                    <button style="font-size: 20px;"><i class="fa fa-trash"></i></button>
+                                </a>
+                            </td>
+                        </tr>
+                     
+                      </tbody>
+                </table>
+            </div>
+            <!---End Order Table--->
+
+        </main>
+        <!---End Main--->
+    </div>
+    
+
+    <script src="/js/user.js"></script>
+    <script src="/js/chart/userchart.js"></script>
+    <script src="/js/chart/chart.min.js"></script>
+    <script src="/js/chart/apexcharts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+</body>
+</html>

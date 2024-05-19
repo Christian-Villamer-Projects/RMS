@@ -7,6 +7,7 @@ const adminController = require("../../controller/admin/adminController")
 
 
 router.get("/", adminController.dashboard);
+router.get("/user", adminController.usersGet);
 // router.post("/", loginController.LoginPost);
 
 
