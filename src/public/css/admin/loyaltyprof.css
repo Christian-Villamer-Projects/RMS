@@ -1,0 +1,829 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #FFF;
+    --color-info-dark: #7D8DA1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #F6F6F9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.28rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181A1E;
+    --color-white: #202528;
+    --color-dark: #EDEFFD;
+    --color-dark-variant: #A3BDCC;
+    --color-light: rgba(0,0,0,0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none; 
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a{
+    color: var(--color-dark)
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+small{
+    font-size: 0.76rem;
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 12rem auto;
+}
+
+aside{
+    height: 100vh;
+}
+
+aside .toggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo{
+    display: flex;
+    gap: 0.5rem;
+}
+
+aside .toggle .logo img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+aside .toggle .close{
+    padding-right: 1rem;
+    display: none;
+}
+
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 88vh;
+    position: relative;
+    top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar:hover{
+    box-shadow: none;
+}
+
+aside .sidebar a{
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+aside .sidebar a.active{
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+}
+
+aside .sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar a.active span{
+    color: var(--color-primary);
+    margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a:hover{
+    color: var(--color-primary);
+}
+
+aside .sidebar a:hover span{
+    margin-left: 0.6rem;
+}
+
+aside .sidebar .message-count{
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: var(--color-white);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+main{
+    margin-top: 1.4rem;
+}
+
+/* reservation */
+
+main .reservation{
+    margin-top: 1.3rem;
+}
+
+main .reservation h2{
+    margin-bottom: 0.8rem;
+}
+
+main .reservation table{
+    background-color: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    transition: all 0.3s ease;
+}
+
+main .reservation table:hover{
+    box-shadow: none;
+}
+
+main .reservation a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+
+/* ===== =====>> Css Variables  <<===== =====  */
+:root {
+  /* =====>>  Font Color  <<===== */
+  --f1-color: #fff;
+  --f2-color: #000;
+  --f3-color: rgba(0, 0, 0, 0.8);
+  --f4-color: rgba(0, 0, 0, 0.6);
+  --f5-color: #0099cc;
+  --f6-color: #88cee6;
+
+  /* =====>>  Background Color  <<===== */
+  --bg1-color: #fff;
+  --bg2-color: #000;
+  --bg3-color: #33ccff;
+  --bg4-color: #33cc33;
+  --bg5-color: #0099cc;
+  --bg6-color: rgba(0, 0, 0, 0.4);
+  --bg7-color: rgba(0, 0, 0, 0.2);
+  --glass-bg: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
+  --C-lg-bg: linear-gradient(45deg, #ff3399, #ff9933);
+
+  /* ===== =====>>  Font Size  <<===== =====  */
+  --xxxl-fs: 2.2rem;
+  --xxl-fs: 1.8rem;
+  --xl-fs: 1.6rem;
+  --l-fs: 1.4rem;
+  --m-fs: 1.2rem;
+  --s-fs: 1.1rem;
+  --xs-fs: 1rem;
+
+  /* =====>>  Margin  <<===== */
+  --m-2-5: 2.5rem;
+  --m-1-8: 1.8rem;
+  --m-1-5: 1.5rem;
+  --m-0-6: 0.6rem;
+  --m-0-5: 0.5rem;
+  --m-0-3: 0.3rem;
+
+  /* =====>>  Padding  <<===== */
+  --p-2-5: 2.5rem;
+  --p-1-5: 1.5rem;
+  --p-1-0: 1rem;
+  --p-0-8: 0.8rem;
+  --p-0-5: 0.5rem;
+  --p-0-4: 0.4rem;
+  --p-0-3: 0.3rem;
+}
+
+/* ===== =====>>  Body Css  <<===== =====  */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===== =====>>  Body Main-Background  <<===== =====  */
+.main_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: left;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+/* ===== =====>>  Main-Container  <<===== =====  */
+.prof-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "header header"
+    "userProfile userDetails"
+    "work_skills timeline_about"
+    "work_skills timeline_about";
+  width: 100%;
+  height: 90vh;
+  background: var(--glass-bg);
+  padding: var(--p-1-5);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== =====>>  Container Cards Grid-Area Start  <<===== =====  */
+header {
+  grid-area: header;
+}
+
+.userProfile {
+  grid-area: userProfile;
+}
+
+.work_skills {
+  grid-area: work_skills;
+}
+
+.userDetails {
+  grid-area: userDetails;
+}
+
+.timeline_about {
+  grid-area: timeline_about;
+}
+
+/* ===== =====>>  Container Cards  <<===== =====  */
+.prof-container .card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(3rem);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  padding: var(--p-1-5);
+}
+
+/* ===== =====>>  Container Header/Navbar  <<===== =====  */
+.prof-container header {
+  padding: 0 var(--p-2-5);
+}
+
+.prof-container header .brandLogo {
+  display: flex;
+  align-items: center;
+}
+
+.prof-container header .brandLogo figure img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.prof-container header .brandLogo span {
+  font-size: var(--xl-fs);
+  font-weight: 700;
+  margin-left: var(--m-0-5);
+}
+
+/* ===== =====>>  User Main-Profile Start  <<===== ===== */
+.prof-container .userProfile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.prof-container .userProfile .profile figure img {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+}
+
+/* ===== =====>>  Work & Skills Start  <<===== ===== */
+.prof-container .work_skills {
+  padding: var(--p-1-5);
+}
+
+.work_skills .orders .heading,
+.work_skills .repeat-orders .heading {
+  position: relative;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  margin-bottom: var(--m-1-5);
+}
+
+.work_skills .orders .heading::before,
+.work_skills .repeat-orders .heading::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 0.1rem;
+  width: 100%;
+  background: var(--bg6-color);
+}
+
+.work_skills .orders .primary,
+.work_skills .orders .secondary {
+  position: relative;
+}
+
+.work_skills .orders .primary h1,
+.work_skills .orders .secondary h1 {
+  font-size: 15px;
+  color: var(--f3-color);
+  margin-bottom: var(--m-0-6);
+}
+
+.work_skills .orders .primary span,
+.work_skills .orders .secondary span {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--f5-color);
+  background: #e6f2ff;
+  padding: var(--p-0-4) var(--p-1-0);
+  border-radius: 0.4rem;
+}
+
+.work_skills .orders .primary p,
+.work_skills .orders .secondary p {
+  margin-bottom: var(--m-1-8);
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6rem;
+}
+
+/* =====>>  Skills Bars  <<===== */
+.work_skills .repeat-orders ul li {
+  position: relative;
+  font-size: var(--m-fs);
+  line-height: 1.8rem;
+  margin: var(--m-0-5);
+  color: var(--f2-color);
+  font-weight: 500;
+}
+
+.work_skills .repeat-orders ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 0.2rem;
+  background: var(--bg3-color);
+  animation: skills 8s linear infinite;
+  animation-delay: calc(-2s * var(--i));
+}
+
+@keyframes repeat-orders {
+  0% {
+    width: 50%;
+    filter: hue-rotate(180deg);
+  }
+
+  50% {
+    width: 0;
+  }
+
+  100% {
+    width: 50%;
+    filter: hue-rotate(0);
+  }
+}
+
+/* ===== =====>>  User Details   <<===== ===== */
+.userDetails {
+  position: relative;
+  padding: var(--p-1-5) var(--p-2-5);
+}
+
+.userDetails .userName h1 {
+  font-size: 25px;
+}
+
+.userDetails .userName .map {
+  position: absolute;
+  top: 2.5rem;
+  left: 18.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userDetails .userName .map .ri {
+  margin-right: var(--m-0-3);
+  font-size: var(--m-fs);
+}
+
+.userDetails .userName .map span {
+  font-size: 13px;
+  color: var(--f3-color);
+  font-weight: 700;
+}
+
+.userDetails .userName p {
+  font-size: var(--m-fs);
+  font-weight: 700;
+  color: var(--f5-color);
+  margin-bottom: var(--m-1-8);
+}
+
+.userDetails .rank {
+  position: relative;
+  margin-bottom: var(--m-1-8);
+}
+
+.userDetails .rank .heading {
+  font-size: 11px;
+  color: var(--f4-color);
+  text-transform: uppercase;
+  margin-top: var(--m-1-8);
+}
+
+.userDetails .rank span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.userDetails .rank .rating {
+  position: absolute;
+  top: 1.3rem;
+  left: 3.5rem;
+}
+
+.userDetails .rank .rating .rate {
+  color: var(--f5-color);
+  font-size: var(--l-fs);
+}
+
+.userDetails .rank .rating .underrate {
+  color: var(--f6-color);
+}
+
+.userDetails .btns ul,
+.userDetails .btns ul li {
+  display: flex;
+  align-items: center;
+}
+
+.userDetails .btns ul li {
+  margin-right: var(--m-2-5);
+  border-radius: 0.5rem;
+}
+
+.userDetails .btns ul li .ri {
+  margin-right: var(--m-0-5);
+  font-size: var(--xl-fs);
+}
+
+.userDetails .btns ul li a {
+  color: var(--f2-color);
+  font-weight: 500;
+}
+
+.userDetails .btns ul .active {
+  background: #e6f2ff;
+  padding: 0 var(--p-1-0);
+}
+
+.userDetails .btns ul .active a,
+.userDetails .btns ul .active .ri {
+  color: var(--f5-color);
+}
+
+/* ===== =====>>  Timeline & About <<===== ===== */
+.timeline_about {
+  padding: var(--p-2-5);
+}
+
+h1.heading {
+    font-size: 1.2rem;
+}
+
+h1.label {
+    font-size: 1rem;
+}
+
+span.info {
+    font-size: 1.2rem;
+}
+
+.timeline_about .tabs ul {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--m-2-5);
+}
+
+.timeline_about .tabs ul::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--bg7-color);
+}
+
+.timeline_about .tabs ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: var(--m-2-5);
+  padding-bottom: var(--p-0-8);
+  cursor: pointer;
+}
+
+.timeline_about .tabs ul li span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.timeline_about .tabs ul li .ri {
+  margin-right: var(--m-0-5);
+}
+
+.timeline_about .tabs ul .active::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--bg5-color);
+}
+
+.timeline_about .contact_info .heading,
+.timeline_about .basic_info .heading {
+  font-size: var(--xs-fs);
+  color: var(--f4-color);
+  text-transform: uppercase;
+  margin-bottom: var(--m-1-5);
+}
+
+.timeline_about .contact_info ul,
+.timeline_about .basic_info ul {
+  margin-bottom: var(--m-1-5);
+}
+
+.timeline_about .contact_info ul li,
+.timeline_about .basic_info ul li {
+  display: flex;
+  margin: var(--m-0-5) 0;
+}
+
+.timeline_about .contact_info ul li h1,
+.timeline_about .basic_info ul li h1 {
+  font-weight: 500;
+  font-size: var(--m-fs);
+  min-width: 12rem;
+}
+
+.timeline_about .contact_info ul li span,
+.timeline_about .basic_info ul li span {
+  font-size: var(--m-fs);
+}
+
+.timeline_about .contact_info ul .phone span,
+.timeline_about .contact_info ul .email span,
+.timeline_about .contact_info ul .site span {
+  color: var(--f5-color);
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .prof-container{
+        width: 95%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    aside .logo h2{
+        display: none;
+    }
+
+    aside .sidebar h3{
+        display: none;
+    }
+
+    aside .sidebar a{
+        width: 5.6rem;
+    }
+
+    aside .sidebar a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+
+    main .dashboard{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    main .loyalty-users .users-list .user{
+        flex-basis: 40%;
+    }
+
+    main .reservation{
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 0.8rem;
+    }
+
+    main .reservation table{
+        width: 83vw;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .prof-container{
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 0 var(--padding-1);
+    }
+
+    aside{
+        position: fixed;
+        background-color: var(--color-white);
+        width: 15rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        height: 100vh;
+        left: -100%;
+        display: none;
+        animation: showMenu 0.4s ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+
+    aside .logo{
+        margin-left: 1rem;
+    }
+
+    aside .logo h2{
+        display: inline;
+    }
+
+    aside .sidebar h3{
+        display: inline;
+    }
+
+    aside .sidebar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+
+    aside .sidebar a:last-child{
+        position: absolute;
+        bottom: 5rem;
+    }
+
+    aside .toggle .close{
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    main{
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    main .loyalty-users .users-list .user{
+        flex-basis: 35%;
+    }
+
+    main .reservation{
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+
+    main .reservation table{
+        width: 100%;
+        margin: 0;
+    }
+}

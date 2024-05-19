@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 // ========== required router =========== //
-
+console.log(__dirname)
 const index_router = require("./routes/index");
 const login_router = require("./routes/login");
 const sign_up_router = require("./routes/sign_up");

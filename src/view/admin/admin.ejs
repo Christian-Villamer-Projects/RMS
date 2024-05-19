@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/admin/chart/apexcharts.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <link href="/css/admin/dboardstyle.css" rel="stylesheet">   
+
+
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    
+    <div class="container">
+        <!---Sidebar--->
+        <%- include('./sidenav'); -%>
+        <!---End sidebar--->
+
+        <!---Main--->
+        <main>
+            <h1>Dashboard</h1>
+            <!--Dashboard-->
+            <div class="dashboard">
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Total sales</h3>
+                            <h1>₱50,000</h1>
+                        </div>
+                        <div class="progress">
+                            <canvas id="progressChart1" class="chart" height="80" width="100"></canvas>
+                            <div class="percentage">
+                                <p>90%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Total sales</h3>
+                            <h1>₱50,000</h1>
+                        </div>
+                        <div class="progress">
+                            <canvas id="progressChart2" class="chart" height="80" width="100"></canvas>
+                            <div class="percentage">
+                                <p>70%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Total sales</h3>
+                            <h1>₱50,000</h1>
+                        </div>
+                        <div class="progress">
+                            <canvas id="progressChart3" class="chart" height="80" width="100"></canvas>
+                            <div class="percentage">
+                                <p>40%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---End dashboard--->
+
+            <!---Loyalty users--->
+            <div class="loyalty-users">
+                <h2>Loyalty Points</h2>
+                <div class="users-list">
+                    <div class="user">
+                        <img src="../ADMIN/images/user.png" alt="">
+                        <h2>Name One</h2>
+                        <p>100 Points</p>
+                    </div>
+                    <div class="user">
+                        <img src="../ADMIN/images/user.png" alt="">
+                        <h2>Name Two</h2>
+                        <p>200 Points</p>
+                    </div>
+                    <div class="user">
+                        <img src="../ADMIN/images/user.png" alt="">
+                        <h2>Name Three</h2>
+                        <p>300 Points</p>
+                    </div>
+                    <div class="user">
+                        <a href="../ADMIN/loyalty.html"><img src="../ADMIN/images/plus.png" alt=""></a>
+                        <h2>More</h2>
+                        <p>Show All</p>
+                    </div>
+                </div>
+            </div>
+            <!---End Loyalty users--->
+
+            <!---Reservation Table--->
+            <div class="reservation">
+                <h2>Reservation</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer Name</th>
+                            <th>Customer Number</th>
+                            <th>Reservation</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <a href="../ADMIN/reservation.html">Show All</a>
+            </div>
+            <!---End Order Table--->
+        </main>
+        <!---End Main--->
+
+        <!---Right Section--->
+        <div class="right-section">
+            <!--Nav-->
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <!--Profile-->
+                <div class="profile">
+                    <div class="info">
+                        <p>Hi, <b>Name</b></p>
+                        <small class="text-muted">Super Admin</small>
+                    </div>
+
+                    <div class="profile-photo">
+                        <img src="../ADMIN/images/dp.jpg" onclick="toggleMenu()">
+                    </div>
+                </div>
+            </div>
+            <!--End Nav-->
+            
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="../ADMIN/images/bdrlogo.png" alt="">
+                    <h2>Big Dadi's</h2>
+                    <p>Branch</p>
+                </div>
+            </div>
+
+            
+            <div class="order-online">
+                <div class="header">
+                    <h2>Online Orders</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <img src="../ADMIN/images/user.png" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Name One</h3>
+                            <small class="text-muted">
+                                Place Order: 11:30 AM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <img src="../ADMIN/images/user.png" alt="" srcset="">
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Name One</h3>
+                            <small class="text-muted">
+                                Place Order: 11:30 AM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification show-all">
+                    <div>
+                        <span class="material-icons-sharp">
+                            open_in_full
+                        </span>
+                        <h3>Show All</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../ADMIN/js/reserv.js"></script>
+    <script src="../ADMIN/js/dashboard.js"></script>
+    <script src="../ADMIN/js/chart/chartone.js"></script>
+    <script src="../ADMIN/js/chart/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+
+</body>
+</html>

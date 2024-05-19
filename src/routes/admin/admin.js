@@ -3,11 +3,10 @@ const app = express();
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { users } = require("../../../models");
-// const loginController = require("../controller/loginController")
+const adminController = require("../../controller/admin/adminController")
 
 
-// router.get("/", loginController.LoginGet);
+router.get("/", adminController.dashboard);
 // router.post("/", loginController.LoginPost);
 
 
