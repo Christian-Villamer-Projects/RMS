@@ -17,7 +17,7 @@ const CreateUser = async (req, res) =>{
     try {
         const { firstname, middlename, lastname, username, password } = req.body
         const hash = bcrypt.hashSync(password, 10);
-
+       
         const [row, created] = await users.findOrCreate({
             where:{ username : username},
             defaults: {
@@ -26,7 +26,7 @@ const CreateUser = async (req, res) =>{
                 lastname : lastname, 
                 password : hash,
                 username : username,
-                birthdate: "0000-00-00",
+                birthdate: "2024-01-01",
                 birthplace: "N/A",
                 role_id: 0,
                 branch_id: 0,
@@ -36,7 +36,8 @@ const CreateUser = async (req, res) =>{
             }
         });
 
-
+        // res.json(row)
+        // return;
         res.render("signup", {
             success: req.flash('success'),
             errors: req.flash('errors'),
