@@ -49,24 +49,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>264</td>
-                            <td>Sample Name</td>
-                            <td>Admin</td>
-                            <td>Obando</td>
-                            <td>
-                                <a href="./edit_profile/">
-                                    <button style="font-size:20px;"><i class="fa fa-pencil-square-o"></i></button>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="#">
-                                    <button style="font-size: 20px;"><i class="fa fa-trash"></i></button>
-                                </a>
-                            </td>
-                        </tr>
-                     
+                        <% data.forEach(element => { %>
+                            <% console.log(element) %>
+                            <tr>
+                                <td><%= element.id %></td>
+                                <td>264</td>
+                                <td><%= element.first_name + " " + element.lastname %></td>
+                                <td>Admin</td>
+                                <td><%= element.branch_id %></td>
+                                <td>
+                                    <a href="./edit_profile/<%= element.id %>">
+                                        <button style="font-size:20px;"><i class="fa fa-pencil-square-o"></i></button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <button style="font-size: 20px;"><i class="fa fa-trash"></i></button>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% }); %>
                       </tbody>
                 </table>
             </div>
