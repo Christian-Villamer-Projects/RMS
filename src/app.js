@@ -48,8 +48,9 @@ app.use("/login", login_router);
 app.use("/sign_up", sign_up_router);
 
 const admin_router = require("./routes/admin/admin");
+const user_router = require("./routes/admin/user");
 app.use("/admin", admin_router);
-
+app.use("/user", user_router);
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
 });
